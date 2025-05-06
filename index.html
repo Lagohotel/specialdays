@@ -1,77 +1,175 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPECİAL DAYS</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-image: url('https://i.imgur.com/xvhQqBN.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-        .container {
-            text-align: center;
-            background-color: rgba(255, 255, 255, 0.85);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            width: 85%;
-            max-width: 500px;
-            backdrop-filter: blur(3px);
-        }
-        button {
-            padding: 12px 30px;
-            font-size: 18px;
-            margin: 15px 10px;
-            cursor: pointer;
-            background-color: #000000;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            font-weight: bold;
-        }
-        button:hover {
-            background-color: #333333;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-        }
-        h1 {
-            color: #333;
-            margin-bottom: 25px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-            font-size: 24px;
-            text-transform: uppercase;
-        }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+ <title>Special Days</title>
+ <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background-image: url('https://i.imgur.com/xvhQqBN.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 30%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 60px 15px 20px 15px; /* Üst padding 60px yapıldı */
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+  }
+  
+  h1 {
+    color: white;
+    margin-bottom: 20px;
+    margin-top: -20px; /* Başlık hafifçe yukarı çekildi */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: -10px; /* Butonların kaydırması azaltıldı */
+  }
+
+  /* Diğer stiller aynı */
+  .button-container {
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px; 
+  }
+
+  button {
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    min-width: 140px;
+    flex: 1;
+    max-width: 200px;
+  }
+
+  button:hover {
+    background-color: #333333;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Modal ve responsive stiller aynı */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+  }
+
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 95%;
+    height: 95vh;
+    margin-top: 2.5vh;
+  }
+
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  @media (max-width: 480px) {
+    .buttons {
+      gap: 10px;
+    }
+    button {
+      padding: 12px 15px;
+      font-size: 14px;
+      min-width: 120px;
+    }
+  }
+ </style>
 </head>
 <body>
-    <div class="container">
-        <h1>SPECİAL DAYS</h1>
-        <button onclick="openMenu()">FOR İNFORMATİON</button>
-        <button onclick="contactUs()">RESERVATİON</button>
+ <div class="container">
+  <h1>Special Days</h1>
+  <div class="buttons">
+    <div class="button-container">
+      <button onclick="openMenu()">For Information</button>
     </div>
-    
-    <script>
-        function openMenu() {
-            const menuPath = 'https://www.lagohotel.com/tr/special';
-            window.open(menuPath, '_blank');
-        }
+    <div class="button-container">
+      <button onclick="contactUs()">Reservation</button>
+    </div>
+  </div>
+ </div>
 
-        function contactUs() {
-            const url = 'https://wa.me/+905373653072';
-            window.open(url, '_blank');
-        }
-    </script>
+ <!-- PDF Modal ve JS kodu olduğu gibi kaldı -->
+ <div id="pdfModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <iframe id="pdfViewer" class="modal-content" src="" frameborder="0"></iframe>
+ </div>
+ 
+ <script>
+  function openMenu() {
+    const menuPath = 'https://www.lagohotel.com/tr/special';
+    document.getElementById('pdfViewer').src = menuPath;
+    document.getElementById('pdfModal').style.display = "block";
+    document.body.style.overflow = "hidden";
+  }
+
+  function contactUs() {
+    const url = 'https://wa.me/+905373653072';
+    window.open(url, '_blank');
+  }
+
+  function closeModal() {
+    document.getElementById('pdfModal').style.display = "none";
+    document.getElementById('pdfViewer').src = "";
+    document.body.style.overflow = "auto";
+  }
+
+  window.onclick = function(event) {
+    const modal = document.getElementById('pdfModal');
+    if (event.target == modal) {
+      closeModal();
+    }
+  }
+  
+  document.addEventListener('touchmove', function(e) {
+    if(document.getElementById('pdfModal').style.display === "block") {
+      e.preventDefault();
+    }
+  }, { passive: false });
+ </script>
 </body>
 </html>
