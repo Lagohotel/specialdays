@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAVİLİON AND CABANA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('https://i.imgur.com/xvhQqBN.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            width: 85%;
+            max-width: 500px;
+            backdrop-filter: blur(3px);
+        }
+        button {
+            padding: 12px 30px;
+            font-size: 18px;
+            margin: 15px 10px;
+            cursor: pointer;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #333333;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PAVİLİON AND CABANA</h1>
+        <button onclick="openMenu()">MENU</button>
+        <button onclick="contactUs()">FOR İNFORMATİON</button>
+    </div>
+    
+    <script>
+        function openMenu() {
+            const menuPath = 'https://www.lagohotel.com/tr/special';
+            window.open(menuPath, '_blank');
+        }
+
+        function contactUs() {
+            const url = 'https://wa.me/+905373653072';
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
